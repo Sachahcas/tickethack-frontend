@@ -2,11 +2,43 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Coucou voici le deuxieme commit du projet</title>
+    <title>TicketHack</title>
+    <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-    
+    <div id = container>
+        <div id = header>
+            <div id = logoContainer>
+                <a href="index.html"><img id="LogoIcon" src="ajouter ici le lien du logo" /></a>
+            </div>
+            <div id = menuContainer>
+                <a href="cart.html"> <button type="button" id="cart">cart</button> </a>
+                <a href="booking.html"> <button type="button" id="booking">booking</button> </a>
+            </div>
+        </div>
+        
+        <div id = titlesContainer>
+            <h1>Explore the world effortlessly by train!</h1>
+            <h2>Compare, book and enjoy cheap prices for train tickets: ypiut journez starts on Tickethack</h2>
+        </div>
+        <div id = searchContainer>
+            <div id = searchBlock>
+                <input id="departureInput" type="text" placeholder="Departure" />
+                <input id="arrivalInput" type="text" placeholder="Arrival" />
+                <input id="calendrier" type="text" placeholder="DD/MM/YYYY" />
+            </div>
+            <button type="button" id="search">search</button>
+        </div>
+        <div id = resultContainer>
+            <img src="ajouter l'image" alt="">
+            <span>it's time to book your future trip.</span>
+        </div>
+        <div id = footer>
+
+        </div> 
+    </div>
+
+    <script src="script.js"></script>
 </body>
 </html>
