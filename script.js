@@ -12,8 +12,25 @@ document.querySelector('#search').addEventListener('click', function () {
     fetch('http://localhost:3000/trips', {
         method: 'POST',
 		headers: { 'Content-Type': 'application/json' },
-		body: JSON.stringify({ travel }),
+		body: JSON.stringify( travel ),
 	})
     .then(response => response.json())
-	.then(data => {console.log(data)});
+	.then(data => { 
+        if (data.result){
+            if (data.trips.length === 0 ) {
+                document.querySelector('#resultBlock').innerHTML =
+                `<img id = not-Found src="images/notfound.png" alt="">
+                 <span> Not found </span>` 
+            }
+            else {
+                document.querySelector('#resultBlock').innerHTML = 
+                `<span>${data.trips}</span>`
+            }
+        } else {
+            document.querySelector('#resultBlock').innerHTML = 
+            `<span> Empty field </span>`  
+        }
+    });
 })
+
+// moment().format('LT');
