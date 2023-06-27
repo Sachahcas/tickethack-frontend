@@ -87,6 +87,7 @@ body {
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
+    
   }
 
   #cartContainer, #bookingContainer {
@@ -107,6 +108,23 @@ body {
   }
 
   #trainImage {
-    height: 80%;
-    width: 80%;
+    padding: auto;
+    height: 40%;
+    width: 40%;
+    
   }
+
+  #departure-arrival {
+    display: flex;
+    flex-direction: column;
+    width: 80%;   
+  }
+
+  #search {
+    width: 80%;
+    height: 5vh;
+    background-color: #64b676;
+    border: none;
+    border-radius: 5%;
+  }
+  
