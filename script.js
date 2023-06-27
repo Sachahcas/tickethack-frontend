@@ -2,13 +2,28 @@ document.querySelector('#search').addEventListener('click', function () {
     const date = document.querySelector('#calendrier').value;
     const departure = document.querySelector('#departureInput').value;
     const arrival = document.querySelector('#arrivalInput').value;
+    
 
     const travel ={date: date, departure: departure, arrival: arrival}
 
-    // console.log(travel);
+    function createTripDiv(data){
 
-    // POST ??????
+        document.querySelector('#resultBlock').innerHTML = ''
+    
+        for (const element of data){
+            
+            document.querySelector('#resultBlock').innerHTML += 
+            `<div id = resultLine>
+                <span>${element.departure} > ${element.arrival}</span>
+                
+                <span>${element.price} €</span>
+                <button> Book </button>
+            </div>`
+            //Add addeventlistener on button
+        }
+    }
 
+   
     fetch('http://localhost:3000/trips', {
         method: 'POST',
 		headers: { 'Content-Type': 'application/json' },
@@ -16,15 +31,15 @@ document.querySelector('#search').addEventListener('click', function () {
 	})
     .then(response => response.json())
 	.then(data => { 
+        console.log(data.time)
         if (data.result){
-            if (data.trips.length === 0 ) {
+            if (data.tripsData.length === 0 ) {
                 document.querySelector('#resultBlock').innerHTML =
                 `<img id = not-Found src="images/notfound.png" alt="">
                  <span> Not found </span>` 
             }
             else {
-                document.querySelector('#resultBlock').innerHTML = 
-                `<span>${data.trips}</span>`
+                createTripDiv(data.tripsData)
             }
         } else {
             document.querySelector('#resultBlock').innerHTML = 
@@ -33,4 +48,3 @@ document.querySelector('#search').addEventListener('click', function () {
     });
 })
 
-// moment().format('LT');
