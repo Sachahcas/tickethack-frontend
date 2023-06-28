@@ -22,18 +22,19 @@ function updateBookEventListener(trip) {
     console.log(trip)
 	for (let i = 0; i < document.querySelectorAll('.book').length; i++) {
 		document.querySelectorAll('.book')[i].addEventListener('click', function () {
-            console.log('Coucou')
+            
 			fetch(`http://localhost:3000/carts`, {
                 method: 'POST',
                 headers:{"Content-Type":"application/json"},
-                body: JSON.stringify(trip
+                body: JSON.stringify(trip[i]
                 )
             })
             .then(response => response.json())
             .then(data => {
-                console.log(data)
                 if (data.result) {
+                    
                     this.parentNode.remove();
+                    
                 }
             });
 		});
