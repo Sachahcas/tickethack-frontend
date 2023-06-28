@@ -19,20 +19,21 @@ function createTripDiv(data, timeData){
 
 function updateBookEventListener(trip) {
     const {departure, arrival, date, price} = trip
-    console.log(trip)
+    //console.log(trip)
+
 	for (let i = 0; i < document.querySelectorAll('.book').length; i++) {
 		document.querySelectorAll('.book')[i].addEventListener('click', function () {
             
 			fetch(`http://localhost:3000/carts`, {
                 method: 'POST',
                 headers:{"Content-Type":"application/json"},
-                body: JSON.stringify(trip[i]
-                )
+                body: JSON.stringify(trip[i])
             })
             .then(response => response.json())
             .then(data => {
                 if (data.result) {
-                    
+
+                    console.log(data)
                     this.parentNode.remove();
                     
                 }
@@ -57,7 +58,6 @@ document.querySelector('#search').addEventListener('click', function () {
 	})
     .then(response => response.json())
 	.then(data => { 
-        console.log(data.time)
         if (data.result){
             if (data.tripsData.length === 0 ) {
                 document.querySelector('#resultBlock').innerHTML =
@@ -74,4 +74,5 @@ document.querySelector('#search').addEventListener('click', function () {
         }
     });
 })
+
 
