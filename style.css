@@ -64,21 +64,22 @@ body {
     display: flex;
     justify-content: space-around;
     align-items: center;
+    width: 100%;
   }
 
   #searchBlock {
     height: 60%;
     width: 50%;
-    background-color: aliceblue;
+    background-color: #fefefe;
     border-radius: 5%;
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
     min-height: 300px;
-
-   
-  }
+    overflow : auto;
+    padding: 10px; 
+}
 
   #resultBlock {
     height: 60%;
@@ -87,18 +88,39 @@ body {
     border-radius: 5%;
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
+    justify-content: normal;
     align-items: center;
     min-height: 300px;
+    overflow : auto;
   }
 
-  #resultLine {
+  .resultLine {
+    width: 90%;
+    margin: 10px;
     display: flex;
     align-items: center;
-    justify-content:space-around;
-    background-color: rgb(176, 173, 173);
+    justify-content: space-around;
+    background-color: #f6f1f0;
+    border-radius: 5px;
+    gap : 10px;
+    font-family: 'Open Sans', sans-serif;
   }
+  #departureInput, #arrivalInput {
+    height: 20%; 
+    display: flex;
+    align-items: center;
+    background-color: #f1f3f3;
+    border-radius: 5px;
+    font-family: 'Open Sans', sans-serif;
+    border: none;
+    margin: 0;
+    padding: 10px; 
+}
 
+#departureInput {
+  margin-top: 15px;
+    border-bottom: 2px solid #c3c5c4; 
+}
   #cartContainer, #bookingContainer {
     display : flex;
     justify-content: space-around;
@@ -115,6 +137,27 @@ body {
     background-color: white;
     flex-direction: column;
   }
+  #calendrier {
+    width: 85%;
+    height: 10%; 
+    background-color: #f1f3f3;
+    border-radius: 5px;
+    border: none;
+    margin: 0;
+    padding: 10px; 
+}
+  .book {
+    background-color: #51a890; 
+    color: white; 
+    border: none;
+    padding: 7px 7px; 
+    text-align: center; 
+    text-decoration: none; 
+    font-size: 10px;
+    margin: 7px 7px;
+    cursor: pointer;
+    border-radius: 5px;
+  }
 
   #trainImage {
     padding: auto;
@@ -126,14 +169,17 @@ body {
   #departure-arrival {
     display: flex;
     flex-direction: column;
-    width: 80%;   
+    width: 90%;   
   }
 
   #search {
-    width: 80%;
-    height: 5vh;
+    width: 90%;
+    height: 8vh;
     background-color: #64b676;
+    color: white;
     border: none;
-    border-radius: 5%;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-bottom: 15px;
   }
   

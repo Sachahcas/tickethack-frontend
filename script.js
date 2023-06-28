@@ -6,22 +6,23 @@ document.querySelector('#search').addEventListener('click', function () {
 
     const travel ={date: date, departure: departure, arrival: arrival}
 
-    function createTripDiv(data){
+function createTripDiv(data, timeData){
 
-        document.querySelector('#resultBlock').innerHTML = ''
-    
-        for (const element of data){
-            
-            document.querySelector('#resultBlock').innerHTML += 
-            `<div id = resultLine>
-                <span>${element.departure} > ${element.arrival}</span>
-                
-                <span>${element.price} €</span>
-                <button> Book </button>
-            </div>`
-            //Add addeventlistener on button
-        }
+
+    document.querySelector('#resultBlock').innerHTML = ''
+
+    for (let i = 0; i < data.length; i++){
+        const element = data[i];
+        const time = timeData[i];
+        document.querySelector('#resultBlock').innerHTML += 
+        `<div class = resultLine>
+            <span class=DepartureArrival>${element.departure} > ${element.arrival}</span>
+            <span>${time}</span>
+            <span>${element.price} €</span>
+            <button class=book> Book </button>
+        </div>`;
     }
+}
 
    
     fetch('http://localhost:3000/trips', {
@@ -39,7 +40,7 @@ document.querySelector('#search').addEventListener('click', function () {
                  <span> Not found </span>` 
             }
             else {
-                createTripDiv(data.tripsData)
+                createTripDiv(data.tripsData, data.time)
             }
         } else {
             document.querySelector('#resultBlock').innerHTML = 
