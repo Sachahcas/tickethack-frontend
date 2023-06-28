@@ -61,7 +61,7 @@ document.querySelector('#search').addEventListener('click', function () {
         if (data.result){
             if (data.tripsData.length === 0 ) {
                 document.querySelector('#resultBlock').innerHTML =
-                `<img id = not-Found src="images/notfound.png" alt="">
+                `<img id = trainImage src="images/notfound.png" alt="">
                  <span> Not found </span>` 
             }
             else {
@@ -70,7 +70,7 @@ document.querySelector('#search').addEventListener('click', function () {
             }
         } else {
             document.querySelector('#resultBlock').innerHTML = 
-            `<span> Empty field </span>`  
+            `<span id = empty> Empty field </span>`  
         }
     });
 })

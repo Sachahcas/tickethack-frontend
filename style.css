@@ -24,7 +24,7 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: #dddee0;
+    background-color: #fefefe;
     padding: 10px
   }
 
@@ -80,8 +80,8 @@ body {
   }
 
   #searchBlock {
-    height: 60%;
-    width: 50%;
+    height: 500px;
+    width: 400px;
     background-color: #fefefe;
     border-radius: 5%;
     display: flex;
@@ -94,9 +94,9 @@ body {
 }
 
   #resultBlock {
-    height: 60%;
-    width: 50%;
-    background-color: aliceblue;
+    height: 500px;
+    width: 400px;
+    background-color: #fefefe;
     border-radius: 5%;
     display: flex;
     flex-direction: column;
@@ -166,15 +166,17 @@ body {
     text-align: center; 
     text-decoration: none; 
     font-size: 10px;
-    margin: 7px 7px;
+    margin: 10px 7px;
     cursor: pointer;
     border-radius: 5px;
   }
 
   #trainImage {
-    padding: auto;
+    margin-top: 100px;
+    margin-bottom: 80px;
     height: 40%;
     width: 40%;
+    border-bottom:solid  #63B49E;
     
   }
 
@@ -194,4 +196,36 @@ body {
     cursor: pointer;
     margin-bottom: 15px;
   }
-  
+  .DepartureArrival {
+    
+    margin: 10px;    
+  }
+
+  .Time {
+    
+    margin: 10px; 
+  }
+
+  .Price {
+    margin: 10px;
+    
+  }
+
+  .cartUnit {
+    background-color: antiquewhite;
+    width: 100%;
+    text-align: center;
+
+  }
+
+  #bottom {
+    margin-top: 50px;
+    background-color: rgb(1, 21, 63);
+    width: 100%;
+    text-align: center;
+    color: white;
+  }
+
+  #empty {
+    margin:auto
+  }

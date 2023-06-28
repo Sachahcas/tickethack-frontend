@@ -15,15 +15,15 @@ fetch('http://localhost:3000/carts')
             document.querySelector(".cartUnit").innerHTML +=
             `
             <span class=DepartureArrival>${data.tripsInCart[i].departure} > ${data.tripsInCart[i].arrival}</span>
-            <span>${data.time[i]}</span>
-            <span>${data.tripsInCart[i].price} €</span>
+            <span class = Time>${data.time[i]}</span>
+            <span class = Price>${data.tripsInCart[i].price} €</span>
             <button class=book> X </button>`
 
             total += data.tripsInCart[i].price
         }
         document.querySelector("#bottom").innerHTML = `
         <span>Total : ${total}€</span>
-        <button class=book>X</button>`
+        <button class=book>Purchase</button>`
 
     }
 })
